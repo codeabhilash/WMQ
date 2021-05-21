@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'wmq/index.js' %}" />
+</head>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'wmq/widgets.css' %}">
+    <link rel="stylesheet" href="{% static 'wmq/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <title>3D System</title>
+</head>
+<body>
+<div class="app">
+
+  <style>
+
+    #cesiumContainer {
+      width: 100%;
+      height: 100%;
+    }
+  
+    #view3D {
+      display: inline-block;
+      width: 100%;
+    }
+  
+    #3DAdjust {
+      top:100px;
+    }
+  form {
+  display: none;
+}
+
+.app {
+  display: flex;
+  background:linear-gradient(to right, #E9F8FF, #90B2D8, #C1E3FF);
+}
+
+body {
+  background-color: black;
+  background-image: none;
+}
+  
+  .menu {
+  position: !important fixed;
+  top: 0px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+.megamenu .dropdown-menu {
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+.cesium-button {
+  padding-top: 5px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+
+#H {
+  color: white;
+}
+
+#La {
+  color: white;
+}
+
+#Lo {
+  color: white;
+}
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm menu" style="position: fixed;">
+  <a href="#" class="navbar-brand font-weight-bold d-block d-lg-none">WMQ</a>
+
+</nav>
+
+<div class="container" style="background-color: white;">
+
+<p>{{  latest_question_list  }}vvv</p>
+    <table class="table table-light table-hover">
+        <thead class="thead-dark">
+            <tr>
+            <th style="width: 20%;">Project</th>
+            <th style="width: 80%;">URL</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td><a href="{{ project }}">{{ project }}</a></td>
+            </tr>
+        {% endfor %}   
+          </tbody>
+    </table>
+    
+    
+    </div>
+  
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.77/Build/Cesium/Cesium.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+<script src="{% static 'wmq/jquery.min.js' %}"></script>
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.77/Build/Cesium/Cesium.js"></script>
+<script src="{% static 'wmq/index.js' %}"> </script>
+</div>
+</body>
+</html>
